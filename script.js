@@ -46,35 +46,45 @@ var map = L.map('map').
       var a='';
       
       function cambiarpunto() {
-                if(a==0){
-                    
-                   map.removeLayer(marker2);
-                    marker2 = L.marker([-32.925101961991615, -68.84443919027653], { title: 'Plaza Burgos',
-                                                                            draggable: false,
-                                                                            icon: IconoDown}).bindPopup(customPopup1, customOptions1).addTo(map);
-                                                                            var customPopup2 = 'Nodo:Godoy Cruz';
-                                                                            var customOptions2 = {
-                                                                            'maxWidth': '200',
-                                                                            'className' : 'custom'}
-                                                                            
-                a=1;
-                console.log(a);
+        var estado = "";
+        
+        $.ajax({
+            url: 'map.php',
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // Limpiar mapa antes de agregar nuevos marcadores
+               
+                for (var key in markers) {
+                    map.removeLayer(markers[key]);
+                }
+                
+                // Agregar datos a la tabla
+                $.each(data, function(index, item) {
+                
+                    var markerN = 'marker' + item.numero;
+                    var elestado = item.estado;
+                    var coordenadas = item.coordenadas.split(',');
     
-     
-                }
-                else{
-                    
-                    map.removeLayer(marker2);
-                   
-                    marker2 = L.marker([-32.925101961991615, -68.84443919027653], { title: 'Plaza Burgos',
-                                                                        draggable: false,
-                                                                        icon: Icono}).bindPopup(customPopup1, customOptions1).addTo(map);
-                                                                        var customPopup2 = 'Nodo:Godoy Cruz';
-                                                                        var customOptions2 = {
-                                                                        'maxWidth': '200',
-                                                                        'className' : 'custom'} 
-                                                                        a=0;   
-                                                                        console.log(a);                                           
+                    if (elestado == 'down') {
+                        markers[markerN] = L.marker([parseFloat(coordenadas[0]), parseFloat(coordenadas[1])], {
+                            title: 'hola',
+                            draggable: false,
+                            icon: IconoDown
+                        }).bindPopup(customPopup1, customOptions1).addTo(map);
+                    } else {
+                        markers[markerN] = L.marker([parseFloat(coordenadas[0]), parseFloat(coordenadas[1])], {
+                            title: 'hola',
+                            draggable: false,
+                            icon: Icono
+                        }).bindPopup(customPopup1, customOptions1).addTo(map);
                     }
-                }
-                setInterval(cambiarpunto, 2000);
+                });
+            },
+            error: function(error) {
+                console.error('Error al realizar la consulta AJAX:', error);
+            }
+        });
+    }
+    
+    setInterval(cambiarpunto, 2000);
