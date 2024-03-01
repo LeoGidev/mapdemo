@@ -116,3 +116,19 @@ var map = L.map('map').
         }).bindPopup(detalleNombre[nombreN], customOptions1).addTo(map);
         numero ++;
     }
+
+    function copyToClipboard(elementId) {
+        // Selecciona el contenido del elemento
+        var coordElement = document.getElementById(elementId);
+        var textToCopy = coordElement.innerText;
+
+        // Utiliza la Clipboard API para copiar el texto al portapapeles
+        navigator.clipboard.writeText(textToCopy)
+            .then(function () {
+                // Puedes mostrar una notificación o realizar alguna acción adicional si lo deseas
+                alert('Coordenadas copiadas: ' + textToCopy);
+            })
+            .catch(function (err) {
+                console.error('Error al copiar al portapapeles: ', err);
+            });
+    }
