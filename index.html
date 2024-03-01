@@ -30,11 +30,32 @@
                         <div class="form-group">				
                             <input type="text" class="form-control" name="nombre" placeholder="Nombre del punto" required>
                             <input type="text" class="form-control" name="coordenadas" autocomplete="off" placeholder="Coordenadas" required>
-                        </div>
-                
+                        </div>              
             
                       <button type="button" onclick="nuevopunto()" class="btn btn-success btn-block">Enviar</button>
                     </form>	
+                    <div class="explicacion">
+                        Este es un Demo del sistema de monitoreo por Ips, ubicadas en en un mapa.
+                        Por favor agrege el nombre y las coordenas y los iconos parecerán en el mapa.
+                        Le dejamos a continuación una lista de puntos para que pueda probar la web:
+                        <ul>
+                            <li>Plaza Independencia: -32.88593657963769, -68.84703983068465</li>
+                            <li>Plaza Chile: -32.88905258304352, -68.84461802328835</li>
+                            <li>Parque General San MArtin: -32.889620280633494, -68.87011899025954</li>
+                        </ul>
+                        El sistema fué diseñado para monitoreo en empresas  "Wireless ISP" (servico de internet por sistema Wireless).
+                        Es necesario aclarar que el sistema original es de uso privado y el código esta disponible para quien desee adquirirlo con pago de por medio.
+                        El sistema real cuenta con los siguientes item que no son posibles en el demo por estar alojados en un servidor externo y por ser público el código:
+                        <ul>
+                            <li>Sistema en python anailizador de estado por ping</li>
+                            <li>Sistema de alerta ante un estado de Down por mensaje de Telegram</li>
+                            <li>Conexión entre el php servidor a la base de datos</li>
+                            <li>Sistema de login con niveles de usuarios</li>
+                            <li>Sistema de "parent" para determinar importancia de equipo caído</li>
+                            
+                        </ul>
+                        
+                    </div>
                 </div>
             </div>
         </div>

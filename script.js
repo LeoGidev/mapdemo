@@ -90,6 +90,8 @@ var map = L.map('map').
     //setInterval(cambiarpunto, 2000);
 
     var numero=3;
+    var markers = {};
+    var detalleNombre = {};
 
     function nuevopunto() {
 
@@ -100,14 +102,17 @@ var map = L.map('map').
         // Mostrar los valores en el console.log
         console.log("Nombre:", nombre);
         console.log("Coordenadas:", coordenadas);
+
         var markerN = 'marker' + numero;
         var elestado = 'up';
         var coordenadas = coordenadas.split(',');
-
+        var nombreN = 'cust' + numero;
+        detalleNombre[nombreN] = nombre;
+            
         markers[markerN] = L.marker([parseFloat(coordenadas[0]), parseFloat(coordenadas[1])], {
             title: nombre,
             draggable: false,
-            icon: IconoDown
-        }).bindPopup(customPopup1, customOptions1).addTo(map);
+            icon: Icono
+        }).bindPopup(detalleNombre[nombreN], customOptions1).addTo(map);
         numero ++;
     }
