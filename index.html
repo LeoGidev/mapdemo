@@ -18,15 +18,27 @@
      
      </head>
       <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-6 border">
+                <div class="col-12 col-md-6 border">
                     <div id="map"></div>
                 </div>
-                <div class="col-6 border">
+                <div class="col-12 col-md-6 border">
                     <h4>Agregar puntos</h4>
+                    
+                    <form method="post" method="POST">
+                        <div class="form-group">				
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del nodo" required>			
+                            <input type="text" class="form-control" name="ubicacion" autocomplete="off" placeholder="Ubicación" required>
+                            <input type="text" class="form-control" name="coordenadas" autocomplete="off" placeholder="Coordenadas" required>
+                        </div>
+                
+            
+                      <button type="button" onclick="nuevopunto()" class="btn btn-success btn-block">Enviar</button>
+                    </form>	
                 </div>
             </div>
+        </div>
     
     <script src="script.js">
    

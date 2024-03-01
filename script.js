@@ -88,3 +88,16 @@ var map = L.map('map').
     }
     
     setInterval(cambiarpunto, 2000);
+
+    function nuevopunto() {
+        // Obtener los valores de los campos del formulario
+        var nombre = document.getElementsByName("nombre")[0].value;
+        var ubicacion = document.getElementsByName("ubicacion")[0].value;
+        var coordenadas = document.getElementsByName("coordenadas")[0].value;
+
+        // Mostrar los valores en el console.log
+        console.log("Nombre:", nombre);
+        console.log("Número:", numero);
+        console.log("Ubicación:", ubicacion);
+        console.log("Coordenadas:", coordenadas);
+    }
