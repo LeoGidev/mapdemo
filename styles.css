@@ -1,5 +1,23 @@
+body{
+    background-image: url('img/fondo.webp');
+    background-position: center;
+    background-size: cover;
+}
 .principal{
     margin-top: 40px;
+}
+.formulario{
+    background-color: rgba(255, 255, 255, 0.878);
+    box-shadow: 2px 2px 2px black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+.explicacion{
+    background-color: rgba(255, 255, 255, 0.878);
+    box-shadow: 2px 2px 2px black;
+    border-radius: 10px;
+    padding: 20px;
 }
 ul li{
     background-color: rgb(228, 227, 255);

@@ -25,24 +25,35 @@
                     <div id="map"></div>
                 </div>
                 <div class="col-12 col-md-6 ">
+
                     <h4>Agregar puntos</h4>
-                    
+                    <div class="formulario">
                     <form method="post" method="POST">
                         <div class="form-group">				
                             <input type="text" class="form-control" name="nombre" placeholder="Nombre del punto" required>
                             <input type="text" class="form-control" name="coordenadas" autocomplete="off" placeholder="Coordenadas" required>
                         </div>              
-            
+                    
                       <button type="button" onclick="nuevopunto()" class="btn btn-success btn-block">Enviar</button>
                     </form>	
+                    </div>
                     <div class="explicacion">
                         Este demo presenta nuestro avanzado sistema de monitoreo mediante direcciones IP, visualizado de manera geográfica en un mapa interactivo. 
                         Al introducir el nombre y las coordenadas correspondientes, los iconos se mostrarán automáticamente en el mapa. A continuación, proporcionamos 
                         una lista de puntos para que puedas experimentar y probar la funcionalidad de la plataforma web:
                         <ul>
-                            <li>Plaza Independencia: -32.88593657963769, -68.84703983068465</li>
-                            <li>Plaza Chile: -32.88905258304352, -68.84461802328835</li>
-                            <li>Parque General San MArtin: -32.889620280633494, -68.87011899025954</li>
+                            <li>
+                                Plaza Independencia: <span id="coord1">-32.88593657963769, -68.84703983068465</span>
+                                <button class="btn btn-success" onclick="copyToClipboard('coord1')">Copiar</button>
+                            </li>
+                            <li>
+                                Plaza Chile: <span id="coord2">-32.88905258304352, -68.84461802328835</span>
+                                <button class="btn btn-success" onclick="copyToClipboard('coord2')">Copiar</button>
+                            </li>
+                            <li>
+                                Parque General San Martin: <span id="coord3">-32.889620280633494, -68.87011899025954</span>
+                                <button class="btn btn-success" onclick="copyToClipboard('coord3')">Copiar</button>
+                            </li>
                         </ul>
                         <p>El diseño de este sistema se concibió específicamente para el monitoreo en empresas de "Wireless ISP" 
                             (proveedores de servicios de internet mediante sistemas inalámbricos). Es crucial destacar que la versión original 

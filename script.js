@@ -118,14 +118,14 @@ var map = L.map('map').
     }
 
     function copyToClipboard(elementId) {
-        // Selecciona el contenido del elemento
+        
         var coordElement = document.getElementById(elementId);
         var textToCopy = coordElement.innerText;
 
-        // Utiliza la Clipboard API para copiar el texto al portapapeles
+        // Clipboard API
         navigator.clipboard.writeText(textToCopy)
             .then(function () {
-                // Puedes mostrar una notificación o realizar alguna acción adicional si lo deseas
+                
                 alert('Coordenadas copiadas: ' + textToCopy);
             })
             .catch(function (err) {
