@@ -1,12 +1,12 @@
 <?php
 
 // Connection variables
-include '../general/conn.php';
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+//include '../general/conn.php';
+//$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 // Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+//if (!$conn) {
+//    die("Connection failed: " . mysqli_connect_error());
+//}
 
 $datos = array();  // Inicializar el array fuera del bucle
 
