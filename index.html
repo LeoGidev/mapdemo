@@ -18,12 +18,13 @@
      
      </head>
       <body>
-        <div class="container-fluid">
+        <main>
+        <div class="container-fluid principal">
             <div class="row">
-                <div class="col-12 col-md-6 border">
+                <div class="col-12 col-md-6 ">
                     <div id="map"></div>
                 </div>
-                <div class="col-12 col-md-6 border">
+                <div class="col-12 col-md-6 ">
                     <h4>Agregar puntos</h4>
                     
                     <form method="post" method="POST">
@@ -35,9 +36,9 @@
                       <button type="button" onclick="nuevopunto()" class="btn btn-success btn-block">Enviar</button>
                     </form>	
                     <div class="explicacion">
-                        Este es un Demo del sistema de monitoreo por Ips, ubicadas en en un mapa.
-                        Por favor agrege el nombre y las coordenas y los iconos parecerán en el mapa.
-                        Le dejamos a continuación una lista de puntos para que pueda probar la web:
+                        Este demo presenta nuestro avanzado sistema de monitoreo mediante direcciones IP, visualizado de manera geográfica en un mapa interactivo. 
+                        Al introducir el nombre y las coordenadas correspondientes, los iconos se mostrarán automáticamente en el mapa. A continuación, proporcionamos 
+                        una lista de puntos para que puedas experimentar y probar la funcionalidad de la plataforma web:
                         <ul>
                             <li>Plaza Independencia: -32.88593657963769, -68.84703983068465</li>
                             <li>Plaza Chile: -32.88905258304352, -68.84461802328835</li>
@@ -47,7 +48,7 @@
                         Es necesario aclarar que el sistema original es de uso privado y el código esta disponible para quien desee adquirirlo con pago de por medio.
                         El sistema real cuenta con los siguientes item que no son posibles en el demo por estar alojados en un servidor externo y por ser público el código:
                         <ul>
-                            <li>Sistema en python anailizador de estado por ping</li>
+                            <li>Sistema en python analizador de estado por ping</li>
                             <li>Sistema de alerta ante un estado de Down por mensaje de Telegram</li>
                             <li>Conexión entre el php servidor a la base de datos</li>
                             <li>Sistema de login con niveles de usuarios</li>
@@ -59,6 +60,7 @@
                 </div>
             </div>
         </div>
+        </main>
     
     <script src="script.js">
    
